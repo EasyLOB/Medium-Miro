@@ -1,0 +1,139 @@
+AppCards
+
+AppCardItem CreateAppCardItem(AppCardCreateRequest body, string boardId)
+ApiResponse<AppCardItem> CreateAppCardItemWithHttpInfo(AppCardCreateRequest body, string boardId)
+Object DeleteAppCardItem(string boardId, string itemId)
+ApiResponse<Object> DeleteAppCardItemWithHttpInfo(string boardId, string itemId)
+AppCardItem GetAppCardItem(string boardId, string itemId)
+ApiResponse<AppCardItem> GetAppCardItemWithHttpInfo(string boardId, string itemId)
+AppCardItem UpdateAppCardItem(AppCardUpdateRequest body, string boardId, string itemId)
+ApiResponse<AppCardItem> UpdateAppCardItemWithHttpInfo(AppCardUpdateRequest body, string boardId, string itemId)
+
+BoardMembers
+
+BoardMembersPagedResponse GetBoardMembers(string boardId, string limit = null, string offset = null)
+ApiResponse<BoardMembersPagedResponse> GetBoardMembersWithHttpInfo(string boardId, string limit = null, string offset = null)
+BoardMemberWithLinks GetSpecificBoardMember(string boardId, string boardMemberId)
+ApiResponse<BoardMemberWithLinks> GetSpecificBoardMemberWithHttpInfo(string boardId, string boardMemberId)
+Object RemoveBoardMember(string boardId, string boardMemberId)
+ApiResponse<Object> RemoveBoardMemberWithHttpInfo(string boardId, string boardMemberId)
+InvitationResult ShareBoard(BoardMembersInvite body, string boardId)
+ApiResponse<InvitationResult> ShareBoardWithHttpInfo(BoardMembersInvite body, string boardId)
+BoardMemberWithLinks UpdateBoardMember(BoardMemberChanges body, string boardId, string boardMemberId)
+ApiResponse<BoardMemberWithLinks> UpdateBoardMemberWithHttpInfo(BoardMemberChanges body, string boardId, string boardMemberId)
+
+Boards
+
+BoardWithLinks CopyBoard(string copyFrom, BoardChanges body = null)
+ApiResponse<BoardWithLinks> CopyBoardWithHttpInfo(string copyFrom, BoardChanges body = null)
+BoardWithLinks CreateBoard(BoardChanges body = null)
+ApiResponse<BoardWithLinks> CreateBoardWithHttpInfo(BoardChanges body = null)
+Object DeleteBoard(string boardId)
+ApiResponse<Object> DeleteBoardWithHttpInfo(string boardId)
+BoardsPagedResponse GetBoards(string teamId = null, string projectId = null, string query = null, string owner = null, string limit = null, string offset = null, string sort = null)
+ApiResponse<BoardsPagedResponse> GetBoardsWithHttpInfo(string teamId = null, string projectId = null, string query = null, string owner = null, string limit = null, string offset = null, string sort = null)
+BoardWithLinks GetSpecificBoard(string boardId)
+ApiResponse<BoardWithLinks> GetSpecificBoardWithHttpInfo(string boardId)
+BoardWithLinks UpdateBoard(BoardChanges body, string boardId)
+ApiResponse<BoardWithLinks> UpdateBoardWithHttpInfo(BoardChanges body, string boardId)
+
+Cards
+
+CardItem CreateCardItem(CardCreateRequest body, string boardId)
+ApiResponse<CardItem> CreateCardItemWithHttpInfo(CardCreateRequest body, string boardId)
+Object DeleteCardItem(string boardId, string itemId)
+ApiResponse<Object> DeleteCardItemWithHttpInfo(string boardId, string itemId)
+CardItem GetCardItem(string boardId, string itemId)
+ApiResponse<CardItem> GetCardItemWithHttpInfo(string boardId, string itemId)
+CardItem UpdateCardItem(CardUpdateRequest body, string boardId, string itemId)
+ApiResponse<CardItem> UpdateCardItemWithHttpInfo(CardUpdateRequest body, string boardId, string itemId)
+
+Connectors
+
+ConnectorWithLinks CreateConnector(ConnectorCreationData body, string boardId)
+ApiResponse<ConnectorWithLinks> CreateConnectorWithHttpInfo(ConnectorCreationData body, string boardId)
+Object DeleteConnector(string boardId, string connectorId)
+ApiResponse<Object> DeleteConnectorWithHttpInfo(string boardId, string connectorId)
+ConnectorWithLinks GetConnector(string boardId, string connectorId)
+ApiResponse<ConnectorWithLinks> GetConnectorWithHttpInfo(string boardId, string connectorId)
+ConnectorsCursorPaged GetConnectors(string boardId, string limit = null, string cursor = null)
+ApiResponse<ConnectorsCursorPaged> GetConnectorsWithHttpInfo(string boardId, string limit = null, string cursor = null)
+ConnectorWithLinks UpdateConnector(ConnectorChangesData body, string boardId, string connectorId)
+ApiResponse<ConnectorWithLinks> UpdateConnectorWithHttpInfo(ConnectorChangesData body, string boardId, string connectorId)
+
+Documents
+
+DocumentItem CreateDocumentItemUsingUrl(DocumentCreateRequest body, string boardId)
+ApiResponse<DocumentItem> CreateDocumentItemUsingUrlWithHttpInfo(DocumentCreateRequest body, string boardId)
+Object DeleteDocumentItem(string boardId, string itemId)
+ApiResponse<Object> DeleteDocumentItemWithHttpInfo(string boardId, string itemId)
+DocumentItem GetDocumentItem(string boardId, string itemId)
+ApiResponse<DocumentItem> GetDocumentItemWithHttpInfo(string boardId, string itemId)
+DocumentItem UpdateDocumentItemUsingUrl(DocumentUpdateRequest body, string boardId, string itemId)
+ApiResponse<DocumentItem> UpdateDocumentItemUsingUrlWithHttpInfo(DocumentUpdateRequest body, string boardId, string itemId)
+
+Embeds
+
+EmbedItem CreateEmbedItem(EmbedCreateRequest body, string boardId)
+ApiResponse<EmbedItem> CreateEmbedItemWithHttpInfo(EmbedCreateRequest body, string boardId)
+Object DeleteEmbedItem(string boardId, string itemId)
+ApiResponse<Object> DeleteEmbedItemWithHttpInfo(string boardId, string itemId)
+EmbedItem GetEmbedItem(string boardId, string itemId)
+ApiResponse<EmbedItem> GetEmbedItemWithHttpInfo(string boardId, string itemId)
+EmbedItem UpdateEmbedItem(EmbedUpdateRequest body, string boardId, string itemId)
+ApiResponse<EmbedItem> UpdateEmbedItemWithHttpInfo(EmbedUpdateRequest body, string boardId, string itemId)
+
+Images
+
+ImageItem CreateImageItemUsingUrl(ImageCreateRequest body, string boardId)
+ApiResponse<ImageItem> CreateImageItemUsingUrlWithHttpInfo(ImageCreateRequest body, string boardId)
+Object DeleteImageItem(string boardId, string itemId)
+ApiResponse<Object> DeleteImageItemWithHttpInfo(string boardId, string itemId)
+ImageItem GetImageItem(string boardId, string itemId)
+ApiResponse<ImageItem> GetImageItemWithHttpInfo(string boardId, string itemId)
+ImageItem UpdateImageItemUsingUrl(ImageUpdateRequest body, string boardId, string itemId)
+ApiResponse<ImageItem> UpdateImageItemUsingUrlWithHttpInfo(ImageUpdateRequest body, string boardId, string itemId)
+
+Items
+
+Object DeleteItem(string boardId, string itemId)
+ApiResponse<Object> DeleteItemWithHttpInfo(string boardId, string itemId)
+GenericItemCursorPaged GetItems(string boardId, string limit = null, string type = null, string cursor = null)
+ApiResponse<GenericItemCursorPaged> GetItemsWithHttpInfo(string boardId, string limit = null, string type = null, string cursor = null)
+GenericItem GetSpecificItem(string boardId, string itemId)
+ApiResponse<GenericItem> GetSpecificItemWithHttpInfo(string boardId, string itemId)
+GenericItem UpdateItemPositionOrParent(GenericItemUpdate body, string boardId, string itemId)
+ApiResponse<GenericItem> UpdateItemPositionOrParentWithHttpInfo(GenericItemUpdate body, string boardId, string itemId)
+
+Shapes
+
+ShapeItem CreateShapeItem(ShapeCreateRequest body, string boardId)
+ApiResponse<ShapeItem> CreateShapeItemWithHttpInfo(ShapeCreateRequest body, string boardId)
+Object DeleteShapeItem(string boardId, string itemId)
+ApiResponse<Object> DeleteShapeItemWithHttpInfo(string boardId, string itemId)
+ShapeItem GetShapeItem(string boardId, string itemId)
+ApiResponse<ShapeItem> GetShapeItemWithHttpInfo(string boardId, string itemId)
+ShapeItem UpdateShapeItem(ShapeUpdateRequest body, string boardId, string itemId)
+ApiResponse<ShapeItem> UpdateShapeItemWithHttpInfo(ShapeUpdateRequest body, string boardId, string itemId)
+
+StickyNotes
+
+StickyNoteItem CreateStickyNoteItem(StickyNoteCreateRequest body, string boardId)
+ApiResponse<StickyNoteItem> CreateStickyNoteItemWithHttpInfo(StickyNoteCreateRequest body, string boardId)
+Object DeleteStickyNoteItem(string boardId, string itemId)
+ApiResponse<Object> DeleteStickyNoteItemWithHttpInfo(string boardId, string itemId)
+StickyNoteItem GetStickyNoteItem(string boardId, string itemId)
+ApiResponse<StickyNoteItem> GetStickyNoteItemWithHttpInfo(string boardId, string itemId)
+StickyNoteItem UpdateStickyNoteItem(StickyNoteUpdateRequest body, string boardId, string itemId)
+ApiResponse<StickyNoteItem> UpdateStickyNoteItemWithHttpInfo(StickyNoteUpdateRequest body, string boardId, string itemId)
+
+Texts
+
+TextItem CreateTextItem(TextCreateRequest body, string boardId)
+ApiResponse<TextItem> CreateTextItemWithHttpInfo(TextCreateRequest body, string boardId)
+Object DeleteTextItem(string boardId, string itemId)
+ApiResponse<Object> DeleteTextItemWithHttpInfo(string boardId, string itemId)
+TextItem GetTextItem(string boardId, string itemId)
+ApiResponse<TextItem> GetTextItemWithHttpInfo(string boardId, string itemId)
+TextItem UpdateTextItem(TextUpdateRequest body, string boardId, string itemId)
+ApiResponse<TextItem> UpdateTextItemWithHttpInfo(TextUpdateRequest body, string boardId, string itemId)

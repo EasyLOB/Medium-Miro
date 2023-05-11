@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1BB0A445-74A1-4BFA-AE8B-8169F8D19DDB}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>API_DOTNET_Framework</RootNamespace>
+    <AssemblyName>API-DOTNET-Framework</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=110.2.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.110.2.0\lib\net471\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Text.Encodings.Web, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.7.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=7.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.7.0.2\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="API\MiroAPI.cs" />
+    <Compile Include="API\Models\AppCardCreateRequest.cs" />
+    <Compile Include="API\Models\AppCardData.cs" />
+    <Compile Include="API\Models\AppCardDataChanges.cs" />
+    <Compile Include="API\Models\AppCardItem.cs" />
+    <Compile Include="API\Models\AppCardStyle.cs" />
+    <Compile Include="API\Models\AppCardUpdateRequest.cs" />
+    <Compile Include="API\Models\Board.cs" />
+    <Compile Include="API\Models\BoardChanges.cs" />
+    <Compile Include="API\Models\BoardLinks.cs" />
+    <Compile Include="API\Models\BoardMember.cs" />
+    <Compile Include="API\Models\BoardMemberChanges.cs" />
+    <Compile Include="API\Models\BoardMembersInvite.cs" />
+    <Compile Include="API\Models\BoardMembersPagedResponse.cs" />
+    <Compile Include="API\Models\BoardMemberWithLinks.cs" />
+    <Compile Include="API\Models\BoardPermissionsPolicy.cs" />
+    <Compile Include="API\Models\BoardPolicy.cs" />
+    <Compile Include="API\Models\BoardPolicyChange.cs" />
+    <Compile Include="API\Models\BoardSharingPolicy.cs" />
+    <Compile Include="API\Models\BoardSharingPolicyChange.cs" />
+    <Compile Include="API\Models\BoardsPagedResponse.cs" />
+    <Compile Include="API\Models\BoardWithLinks.cs" />
+    <Compile Include="API\Models\Caption.cs" />
+    <Compile Include="API\Models\CardCreateRequest.cs" />
+    <Compile Include="API\Models\CardData.cs" />
+    <Compile Include="API\Models\CardItem.cs" />
+    <Compile Include="API\Models\CardStyle.cs" />
+    <Compile Include="API\Models\CardUpdateRequest.cs" />
+    <Compile Include="API\Models\ConnectorChangesData.cs" />
+    <Compile Include="API\Models\ConnectorCreationData.cs" />
+    <Compile Include="API\Models\ConnectorsCursorPaged.cs" />
+    <Compile Include="API\Models\ConnectorStyle.cs" />
+    <Compile Include="API\Models\ConnectorWithLinks.cs" />
+    <Compile Include="API\Models\CreatedBy.cs" />
+    <Compile Include="API\Models\CustomField.cs" />
+    <Compile Include="API\Models\DocumentCreateRequest.cs" />
+    <Compile Include="API\Models\DocumentData.cs" />
+    <Compile Include="API\Models\DocumentItem.cs" />
+    <Compile Include="API\Models\DocumentUpdateRequest.cs" />
+    <Compile Include="API\Models\DocumentUrlData.cs" />
+    <Compile Include="API\Models\DocumentUrlDataChanges.cs" />
+    <Compile Include="API\Models\EmbedCreateRequest.cs" />
+    <Compile Include="API\Models\EmbedData.cs" />
+    <Compile Include="API\Models\EmbedItem.cs" />
+    <Compile Include="API\Models\EmbedUpdateRequest.cs" />
+    <Compile Include="API\Models\EmbedUrlData.cs" />
+    <Compile Include="API\Models\EmbedUrlDataChanges.cs" />
+    <Compile Include="API\Models\FixedRatioGeometry.cs" />
+    <Compile Include="API\Models\FixedRatioNoRotationGeometry.cs" />
+    <Compile Include="API\Models\FrameData.cs" />
+    <Compile Include="API\Models\GenericItem.cs" />
+    <Compile Include="API\Models\GenericItemCursorPaged.cs" />
+    <Compile Include="API\Models\GenericItemUpdate.cs" />
+    <Compile Include="API\Models\Geometry.cs" />
+    <Compile Include="API\Models\ImageCreateRequest.cs" />
+    <Compile Include="API\Models\ImageData.cs" />
+    <Compile Include="API\Models\ImageItem.cs" />
+    <Compile Include="API\Models\ImageUpdateRequest.cs" />
+    <Compile Include="API\Models\ImageUrlData.cs" />
+    <Compile Include="API\Models\ImageUrlDataChanges.cs" />
+    <Compile Include="API\Models\InlineResponse400.cs" />
+    <Compile Include="API\Models\InvitationError.cs" />
+    <Compile Include="API\Models\InvitationResult.cs" />
+    <Compile Include="API\Models\ItemConnectionChangesData.cs" />
+    <Compile Include="API\Models\ItemConnectionCreationData.cs" />
+    <Compile Include="API\Models\ItemConnectionWithLinks.cs" />
+    <Compile Include="API\Models\ModifiedBy.cs" />
+    <Compile Include="API\Models\PageLinks.cs" />
+    <Compile Include="API\Models\Parent.cs" />
+    <Compile Include="API\Models\ParentLinksEnvelope.cs" />
+    <Compile Include="API\Models\Picture.cs" />
+    <Compile Include="API\Models\Position.cs" />
+    <Compile Include="API\Models\PositionChange.cs" />
+    <Compile Include="API\Models\Project.cs" />
+    <Compile Include="API\Models\RelativeOffset.cs" />
+    <Compile Include="API\Models\SelfLink.cs" />
+    <Compile Include="API\Models\ShapeCreateRequest.cs" />
+    <Compile Include="API\Models\ShapeData.cs" />
+    <Compile Include="API\Models\ShapeItem.cs" />
+    <Compile Include="API\Models\ShapeStyle.cs" />
+    <Compile Include="API\Models\ShapeUpdateRequest.cs" />
+    <Compile Include="API\Models\StickyNoteCreateRequest.cs" />
+    <Compile Include="API\Models\StickyNoteData.cs" />
+    <Compile Include="API\Models\StickyNoteItem.cs" />
+    <Compile Include="API\Models\StickyNoteStyle.cs" />
+    <Compile Include="API\Models\StickyNoteUpdateRequest.cs" />
+    <Compile Include="API\Models\Team.cs" />
+    <Compile Include="API\Models\TextCreateRequest.cs" />
+    <Compile Include="API\Models\TextData.cs" />
+    <Compile Include="API\Models\TextItem.cs" />
+    <Compile Include="API\Models\TextStyle.cs" />
+    <Compile Include="API\Models\TextUpdateRequest.cs" />
+    <Compile Include="API\Models\UserInfoShort.cs" />
+    <Compile Include="API\Models\WidgetDataOutput.cs" />
+    <Compile Include="API\Models\WidgetLinks.cs" />
+    <Compile Include="API\Models\WidthOnlyAdjustableGeometry.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

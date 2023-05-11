@@ -1,0 +1,12 @@
+RestSharp
+
+: Method.DELETE | GET | PATCH | POST | PUT -> Method.Delete | ...
+: IRestRequest -> RestRequest
+: IRestResponse -> RestResponse
+: RestClient.BaseUrl -> RestClient.Options.BaseUrl
+: RestClient.Timeout -> RestClient.Options.MaxTimeout
+: RestClient.ExecuteTaskAsync -> RestClient.ExecuteAsync
+: IList<Parameter> headers = response.Headers;
+    -> IReadOnlyCollection<HeaderParameter> headers = response.Headers;
+: request.AddFile(param.Value.Name, param.Value.Writer, param.Value.FileName, param.Value.ContentType);
+    -> request.AddFile(param.Value.Name, param.Value.FileName, param.Value.ContentType);

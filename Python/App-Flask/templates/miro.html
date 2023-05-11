@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>My App Python</title>
+        <link rel="stylesheet" href="../static/css/style.css" />
+        <!-- <link rel="stylesheet" href="../static/css/mirotone/styles.css" /> --> 
+        <script src="https://miro.com/app/static/sdk/v2/miro.js"></script>
+    </head>
+    <body>
+        <div class="grid form-example">
+            <form class="cs1 ce12 form-example--main-content">
+            
+                <div class="form-group">
+                    <label for="form-example-input">Sticky Note Content</label>
+                    <input class="input" type="text" id="form-example-input" placeholder="Type something"/>
+                </div>
+        
+                <div class="form-group">
+                    <label for="form-example-select">Sticky Note Position</label>
+                    <select class="select" id="form-example-select">
+                        <option value="1" selected="selected">Top</option>
+                        <option value="2">Right</option>
+                        <option value="3">Bottom</option>
+                        <option value="4">Left</option>
+                    </select>
+                </div>
+        
+                <div class="form-group">
+                    <label class="checkbox">
+                        <input type="checkbox"/>
+                        <span>Select ?</span>
+                    </label>
+                </div>
+        
+                <div class="form-group">
+                    <label class="radiobutton">
+                        <input type="radio" name="radio"/>
+                        <span>Option 1</span>
+                    </label>
+                    <label class="radiobutton">
+                        <input type="radio" name="radio"/>
+                        <span>Option 2</span>
+                    </label>
+                </div>
+            </form>
+        
+            <button type="button" class="cs1 ce12 button button-primary" onclick="button_onclick()">Create Sticky Note</button>
+        
+        </div>        
+        <!--
+        <div className="grid wrapper">
+            <div className="cs1 ce12">
+                <img src="/static/image/congratulations.png" alt="" />
+            </div>
+            <div className="cs1 ce12">
+                <h1>Congratulations!</h1>
+                <p>You've just created your first Miro app!</p>
+                <p>
+                    To explore more and build your own app, see the Miro Developer
+                    Platform documentation.
+                </p>
+            </div>
+            <div className="cs1 ce12">
+                <a
+                    className="button button-primary"
+                    target="_blank"
+                    href="https://developers.miro.com"
+                >
+                    Read the documentation
+                </a>
+            </div>
+        </div>
+        -->
+    </body>
+
+    <script>
+        function button_onclick() {
+            var option = document.getElementById("form-example-select").value;
+            let x = 0;
+            let y = 0;
+            switch (option) {
+                case "1":
+                    x = 0;
+                    y = -100;
+                    break;
+                case "2":
+                    x = 100;
+                    y = 0;
+                    break;
+                case "3":
+                    x = 0;
+                    y = 100;
+                    break;
+                case "4":
+                    x = -100;
+                    y = 0;
+                    break;
+            }
+
+            var content = document.getElementById("form-example-input").value;
+            const stickyNote = window.miro.board.createStickyNote({
+                content: content,
+                x: x,
+                y: y
+            });            
+        }
+    </script>
+</html>
