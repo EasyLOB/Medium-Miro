@@ -24,6 +24,8 @@ namespace Miro.API
     {
         HttpClient _httpClient;
 
+        IConfiguration _configuration;
+
         string _miroBaseUrl = "";
 
         string _miroAccessToken = "";
@@ -35,8 +37,10 @@ namespace Miro.API
 
         public MiroAPI(IConfiguration configuration)
         {
-            _miroBaseUrl = configuration["Miro:BaseUrl"];
-            _miroAccessToken = configuration["Miro:AccessToken"];
+            _configuration = configuration;
+
+            _miroBaseUrl = _configuration["Miro:BaseUrl"];
+            _miroAccessToken = _configuration["Miro:AccessToken"];
 
             _httpClient = new HttpClient
             {
@@ -45,11 +49,6 @@ namespace Miro.API
             };
             _httpClient.DefaultRequestHeaders.Clear();
             _httpClient.DefaultRequestHeaders.ConnectionClose = true;
-        }
-
-        public static string GetContent(string s)
-        {
-            return s;
         }
 
         void SetHeader(bool authorization = true)
@@ -71,7 +70,7 @@ namespace Miro.API
             SetHeader();
 
             var response = await _httpClient.GetAsync("boards");
-            var content = GetContent(await response.Content.ReadAsStringAsync());
+            var content = await response.Content.ReadAsStringAsync();
             if (response.IsSuccessStatusCode)
             {
                 var responseContent = JsonConvert.DeserializeObject<BoardsPagedResponse>(content);
@@ -95,7 +94,7 @@ namespace Miro.API
             var data = new StringContent(JsonConvert.SerializeObject(board), Encoding.UTF8, "application/json");
             //var data = new StringContent(JsonSerializer.Serialize(board), Encoding.UTF8, "application/json");
             var response = await _httpClient.PostAsync($"boards", data);
-            var content = GetContent(await response.Content.ReadAsStringAsync());
+            var content = await response.Content.ReadAsStringAsync();
             if (response.IsSuccessStatusCode)
             {
                 result = JsonConvert.DeserializeObject<BoardWithLinks>(content);
@@ -116,7 +115,7 @@ namespace Miro.API
             SetHeader();
 
             var response = await _httpClient.GetAsync($"boards/{boardId}/items");
-            var content = GetContent(await response.Content.ReadAsStringAsync());
+            var content = await response.Content.ReadAsStringAsync();
             if (response.IsSuccessStatusCode)
             {
                 var responseContent = JsonConvert.DeserializeObject<GenericItemCursorPaged>(content);
@@ -140,7 +139,7 @@ namespace Miro.API
             var data = new StringContent(JsonConvert.SerializeObject(shape), Encoding.UTF8, "application/json");
             //var data = new StringContent(JsonSerializer.Serialize(shape), Encoding.UTF8, "application/json");
             var response = await _httpClient.PostAsync($"boards/{boardId}/shapes", data);
-            var content = GetContent(await response.Content.ReadAsStringAsync());
+            var content = await response.Content.ReadAsStringAsync();
             if (response.IsSuccessStatusCode)
             {
                 result = JsonConvert.DeserializeObject<ShapeItem>(content);
@@ -163,7 +162,7 @@ namespace Miro.API
             var data = new StringContent(JsonConvert.SerializeObject(connector), Encoding.UTF8, "application/json");
             //var data = new StringContent(JsonSerializer.Serialize(connector), Encoding.UTF8, "application/json");
             var response = await _httpClient.PostAsync($"boards/{boardId}/connectors", data);
-            var content = GetContent(await response.Content.ReadAsStringAsync());
+            var content = await response.Content.ReadAsStringAsync();
             if (response.IsSuccessStatusCode)
             {
                 result = JsonConvert.DeserializeObject<ConnectorWithLinks>(content);

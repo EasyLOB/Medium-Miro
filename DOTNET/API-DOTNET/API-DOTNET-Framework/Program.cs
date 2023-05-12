@@ -11,8 +11,8 @@ namespace API_DOTNET_Framework
 
         static void Main(string[] args)
         {
-            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
-            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
+            //Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
+            //Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
 
             _miroAPI = new MiroAPI();
 

@@ -22,6 +22,10 @@ namespace API_DOTNET
         {
             IServiceProvider serviceProvider = StartupCore.Startup();
             _configuration = serviceProvider.GetService<IConfiguration>();
+
+            //Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
+            //Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
+
             _miroAPI = new MiroAPI(_configuration);
 
             bool exit = false;
