@@ -1,0 +1,14 @@
+@{
+    string accessToken = ViewBag.AccessToken;
+    string refreshToken = ViewBag.RefreshToken;
+    DateTime expireDateTime;
+    DateTime.TryParse(ViewBag.ExpireDateTime as string, out expireDateTime);
+    string teamId = ViewBag.TeamId;
+}
+
+<div class="text-center">
+    @accessToken <br />
+    @refreshToken <br />
+    @expireDateTime <br />
+    @teamId <br />
+</div>

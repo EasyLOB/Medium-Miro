@@ -8,11 +8,14 @@ import requests
 global_url = "https://api.miro.com/v2";
 global_access_token = ""
 
+#global_log = True
+global_log = False
+
 def main():
     board_id = "uXjVMLoNNaA="
 
     key = ""
-    while key != "x":
+    while key != "X":
         clear()
         print("Miro API Client : Python")
         print()
@@ -22,10 +25,12 @@ def main():
         print("<4> Create Shapes and Connectors")
         print("\n<X> EXIT")
 
-        key = readkeys.getch()
+        print("\nPress ANY key ", end="")
+        key = readkeys.getch().upper()
+        print()
 
         action = True
-        match key.upper():
+        match key:
             case "1":
                 boards = get_boards()
                 print("\nBoards")
@@ -143,12 +148,6 @@ def main():
             print("\nPress ANY KEY...")
             readkeys.getch()
 
-def clear():
-    if name == 'nt':
-        _ = system('cls')
-    else:
-        _ = system('clear')
-
 # API Boards
 
 def get_boards():
@@ -158,9 +157,9 @@ def get_boards():
         "Authorization": f"Bearer {global_access_token}"
     }
     response = requests.get(url, headers=headers)
-    #print(response.text)
+    print_log(response.text)
     boards = response.json().get("data")
-    #print(boards)
+    #print_log(boards)
     return boards
 
 def create_board(data):
@@ -183,9 +182,9 @@ def get_board_items(board_id):
         "Authorization": f"Bearer {global_access_token}"
     }
     response = requests.get(url, headers=headers)
-    #print(response.text)
+    print_log(response.text)
     result = response.json().get("data")
-    #print(result)
+    #print_log(result)
     return result
 
 def create_board_shape(board_id, data):
@@ -196,9 +195,9 @@ def create_board_shape(board_id, data):
         "Content-type": "application/json"
     }
     response = requests.post(url, headers=headers, json=data)
-    #print(response.text)
+    print_log(response.text)
     result = response.json()
-    #print(result)
+    #print_log(result)
     return result
 
 def create_board_connector(board_id, data):
@@ -209,10 +208,29 @@ def create_board_connector(board_id, data):
         "Content-Type": "application/json"
     }
     response = requests.post(url, headers=headers, json=data)
-    #print(response.text)
+    print_log(response.text)
     result = response.json()
-    #print(result)
+    #print_log(result)
     return result
     
+# ...
+
+def clear():
+    if name == 'nt':
+        _ = system('cls')
+    else:
+        _ = system('clear')
+
+def print_log(message):
+    if global_log and message is not None:
+        print()
+        if isinstance(message, str):
+            if message[0:1] == "{":
+                print(message)
+            else:
+                print(message[0:100])
+        else:
+            print(json.dumps(message))
+
 if __name__=='__main__':
     main()

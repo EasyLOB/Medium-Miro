@@ -1,0 +1,42 @@
+@{
+    Layout = "";
+}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miro C#/ASP.NET Core</title>
+    <link rel="stylesheet" href="~/miro/css/style.css" />
+    <!-- <link rel="stylesheet" href="~/miro/css/mirotone/styles.css" /> -->
+    <script src="https://miro.com/app/static/sdk/v2/miro.js"></script>
+</head>
+<body>
+    <div class="grid container">
+        <div class="cs1 ce12">
+            <img src="/miro/image/welcome.png" alt="" />
+        </div>
+        <div class="cs1 ce12">
+            <h1>Great, your app is running locally</h1>
+            <p>You can now create your Developer team to get your app running in Miro.</p>
+        </div>
+        <div class="cs1 ce12">
+            <a class="button button-primary"
+               href="https://developers.miro.com/docs/create-a-developer-team"
+               target="_blank">
+                Create a Developer team
+            </a>
+        </div>
+    </div>
+
+    <script>
+        async function init() {
+            miro.board.ui.on('icon:click', async () => {
+                await miro.board.ui.openPanel({ url: '/Miro/Miro' });
+            });
+        }
+
+        init();
+    </script>
+</body>
+</html>
